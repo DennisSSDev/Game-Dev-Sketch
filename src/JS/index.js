@@ -1,5 +1,6 @@
-"use strict";
-import {Search} from  './search.js';
+// Main greeting page
+"use strict"; // TODO: No longer needed in ECMA6
+import { Search } from "./search.js";
 
 const app = new Vue({
   el: "#app",

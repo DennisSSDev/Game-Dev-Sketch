@@ -1,3 +1,4 @@
+// Main page to browse through all of the opprotunities in our Database
 import { Search } from "./search.js";
 
 const app = new Vue({

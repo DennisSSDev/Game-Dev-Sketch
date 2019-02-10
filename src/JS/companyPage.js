@@ -1,3 +1,5 @@
+// In depth view of a specific company
+// Provides map location, company pitch and job opportunities
 import Mapbox from "mapbox-gl-vue";
 import { StylesControl } from "mapbox-gl-controls";
 import Map from "../JS/map.js";

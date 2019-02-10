@@ -1,5 +1,7 @@
-"use strict";
-import {Search} from  './search.js';
+// Page to add information about you company
+// We accept things like company name, icons, descriptions
+"use strict"; // TODO: No longer needed in ECMA6
+import { Search } from "./search.js";
 
 const app = new Vue({
   el: "#app",
@@ -46,29 +48,54 @@ const app = new Vue({
 
       // Check the form for unchanged/empty fields
       // Name
-      if(this.cmpName == "Sony Interactive Entertainment" || this.cmpName == ""){
+      if (
+        this.cmpName == "Sony Interactive Entertainment" ||
+        this.cmpName == ""
+      ) {
         this.formError0 = true;
-        this.formWarning = "Please provide information for all fields if you would like to submit information on a company."
+        this.formWarning =
+          "Please provide information for all fields if you would like to submit information on a company.";
         toPush = false;
-      }else{ this.formError0 = false; }
-     // Address
-      if(this.cmpAddress == "2207 Bridgepointe Pkwy. San Mateo, CA 94404" || this.cmpAddress == ""){
+      } else {
+        this.formError0 = false;
+      }
+      // Address
+      if (
+        this.cmpAddress == "2207 Bridgepointe Pkwy. San Mateo, CA 94404" ||
+        this.cmpAddress == ""
+      ) {
         this.formError1 = true;
-        this.formWarning = "Please provide information for all fields if you would like to submit information on a company."
+        this.formWarning =
+          "Please provide information for all fields if you would like to submit information on a company.";
         toPush = false;
-      }else{ this.formError1 = false; }
+      } else {
+        this.formError1 = false;
+      }
       // Logo
-      if (this.cmpLogo == "Enter a link to a logo image here" || this.cmpLogo == ""){
+      if (
+        this.cmpLogo == "Enter a link to a logo image here" ||
+        this.cmpLogo == ""
+      ) {
         this.formError2 = true;
-          this.formWarning = "Please provide information for all fields if you would like to submit information on a company."
-          toPush = false;
-        }else{ this.formError2 = false; }
-     // Description
-      if(this.cmpDescription == "Recognized as a global leader in interactive and digital entertainment, Sony Interactive Entertainment (SIE) is responsible for the PlayStation brand and family of products. PlayStation has delivered innovative products to market since the launch of the first PlayStation in Japan in 1994. The PlayStation family of products and services includes PlayStation 4, PlayStation VR, PlayStation Store, PlayStation Now and PlayStation Vue." || this.cmpDescription == ""){
+        this.formWarning =
+          "Please provide information for all fields if you would like to submit information on a company.";
+        toPush = false;
+      } else {
+        this.formError2 = false;
+      }
+      // Description
+      if (
+        this.cmpDescription ==
+          "Recognized as a global leader in interactive and digital entertainment, Sony Interactive Entertainment (SIE) is responsible for the PlayStation brand and family of products. PlayStation has delivered innovative products to market since the launch of the first PlayStation in Japan in 1994. The PlayStation family of products and services includes PlayStation 4, PlayStation VR, PlayStation Store, PlayStation Now and PlayStation Vue." ||
+        this.cmpDescription == ""
+      ) {
         this.formError3 = true;
-          this.formWarning = "Please provide information for all fields if you would like to submit information on a company."
-          toPush = false;
-        }else{ this.formError3 = false; }
+        this.formWarning =
+          "Please provide information for all fields if you would like to submit information on a company.";
+        toPush = false;
+      } else {
+        this.formError3 = false;
+      }
 
       // Create a new company object
       let newCmp = {

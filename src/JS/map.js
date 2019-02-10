@@ -1,4 +1,5 @@
-"use strict";
+// Map class that is used as a wrapper for the MapBox api
+"use strict"; // TODO: No longer needed n ECMA6
 class Map {
   //class that is responsible for loading the map box styles, controls and graphics layers
   //also use it to fly to a specified locaion on the Map
