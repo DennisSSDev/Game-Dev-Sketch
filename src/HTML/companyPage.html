@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Company Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/companyPage.css" />
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <ul>
+                <li>
+                    <h2><a href="../HTML/index.html" id="title">GD - Sketch</a></h2>
+                </li>
+                <li class="endNav">
+                    <button type="button" id="searchBtn" @click="searchObj.search(searchTerm)">Search</button>
+                </li>
+                <li class="endNav" id="searchBar">
+                    <div class="search">
+                        <input type="text" name="search" class="round" v-model="searchTerm" />
+                    </div>
+                </li>
+                <li class="endNav">
+                    <h5><a href="../HTML/browsePage.html"> Browse </a></h5>
+                </li>
+                <li class="endNav">
+                    <h5><a href="../HTML/formPage.html"> Add Your Company </a></h5>
+                </li>
+            </ul>
+            <br>
+            <hr>
+            <br>
+        </header>
+        <div>
+            <div class="row justify-content-md-center" id="miniNav">
+                <div class="col-4">
+                    <h6><span @click="select" v-bind:style="sel0">Company Description</span></h6>
+                </div>
+                <div class="col-4">
+                    <h6><span @click="select" v-bind:style="sel1">Available Positions</span></h6>
+                </div>
+                <div class="col-4">
+                    <h6><span @click="select" v-bind:style="sel2">External</span></h6>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-7">
+                    <div id="logoContainer">
+                        <div class="loader" v-bind:style="{display: loaderDisplaySetting}"></div>
+                        <img v-if="loaderDisplaySetting === 'none' " v-bind:src="logo" alt="CompanyLogo" id="CmpLogo">
+                    </div>
+                    <mapbox access-token=""
+                        :map-options="{
+                        style: 'mapbox://styles/dennisssdev/cjp61rk3q14sl2rp8465m4alq',
+                        center: [-73.924725, 40.662702], 
+                        zoom: 11.4 
+                    }"
+                        :geolocate-control="{
+                        show: true,
+                        position: 'top-left'
+                      }"
+                        :fullscreen-control="{
+                        show: true,
+                        position: 'top-left'
+                      }"
+                        @map-load="mapLoaded" @map-init="mapInitialized"></mapbox>
+                </div>
+                <div class="col-5">
+                    <div v-if="activeSelection == sel0" class="card">
+                        <h3 class="card-title">
+                            Company Description
+                        </h3>
+                        <p class="card-text">
+                            <div v-if="companyDescription == ''" class="loader"></div>
+                            <p v-if="companyDescription != ''">
+                                {{ companyDescription }}
+                            </p>
+                        </p>
+                    </div>
+                    <div v-if="activeSelection == sel1" class="card">
+                        <h3 class="card-title">
+                            Job Listings:
+                        </h3>
+                        <p class="card-text">
+                            <div v-if="jobs[0] === undefined" class="loader"></div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Application Link</th>
+                                        <th scope="col">Job Title</th>
+                                    </tr>
+                                </thead>
+                                <tbody v-if="jobs[0] != undefined">
+                                    <tr v-for="job in jobs">
+                                        <td><a v-bind:href="job.redirect_url"> Apply </a></td>
+                                        <td>{{job.title}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                        <div class="row" id="buttons">
+                            <button @click="searchPrevious" class="btn btn-primary" id="positBtn">Last</button>
+                            <button @click="searchNext" class="btn btn-primary" id="positBtn">Next</button>
+                        </div>
+                    </div>
+                    <div v-if="activeSelection == sel2" class="card">
+                        <h3 class="card-title">
+                            External Links
+                        </h3>
+                        <p class="card-text">
+                            <div v-if="externalLinks === {}" class="loader"></div>
+                            <p v-if="externalLinks !== {}">
+                                <p v-for="link in externalLinks">
+                                    <a v-bind:href="link">
+                                        {{ Object.keys(externalLinks).find(key => externalLinks[key] === link) }}</a>
+                                </p>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="../../dist/bundle.js" type="module"></script>
+</body>
+
+</html>

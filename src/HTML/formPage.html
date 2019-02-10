@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/formPage.css" />
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div id="content">
+                <ul>
+                    <li>
+                        <h2><a href="../HTML/index.html" id="title"> GD - Sketch </a></h2>
+                    </li>
+                    <li class="endNav">
+                        <button type="button" id="searchBtn" @click="searchObj.search(searchTerm)">Search</button>
+                    </li>
+                    <li class="endNav" id="searchBar">
+                        <div class="search">
+                            <input type="text" name="search" class="round" v-model="searchTerm" />
+                        </div>
+                    </li>
+                    <li class="endNav">
+                        <h5><a href="../HTML/browsePage.html"> Browse </a></h5>
+                    </li>
+                    <li class="endNav">
+                        <h5><a href="../HTML/formPage.html"> Add Your Company </a></h5>
+                    </li>
+                </ul>
+                <div id="main" class="row">
+                    <form class="col-6">
+                        <div class="form-group">
+                            <div>
+                                <label for="cmpName">Company Name</label>
+                                <input class="form-control" type="text" value="Sony Interactive Entertainment" id="cmpName"
+                                    v-model="cmpName" v-bind:class="{ formError: formError0 }">
+                            </div>
+                            <div id="cmpAdd">
+                                <label for="cmpAddress">Company Address</label>
+                                <input class="form-control" type="text" value="2207 Bridgepointe Pkwy. San Mateo, CA 94404"
+                                    id="cmpAddress" v-model="cmpAddress" v-bind:class="{ formError: formError1 }">
+                            </div>
+                            <div>
+                                <label for="cmpLogo">Link to Logo</label>
+                                <input class="form-control" type="text" value="Enter a link to a logo image here" id="cmpLogo"
+                                    v-model="cmpLogo" v-bind:class="{ formError: formError2 }">
+                            </div>
+                            <div>
+                                <label for="cmpDescription">Company Description</label>
+                                <textarea class="form-control" id="cmpDescritpion" rows="7" value="Recognized as a global leader in interactive and digital entertainment, Sony Interactive Entertainment (SIE) is responsible for the PlayStation brand and family of products. PlayStation has delivered innovative products to market since the launch of the first PlayStation in Japan in 1994. The PlayStation family of products and services includes PlayStation 4, PlayStation VR, PlayStation Store, PlayStation Now and PlayStation Vue."
+                                    v-model="cmpDescription" v-bind:class="{ formError: formError3 }"></textarea>
+                            </div>
+                        </div>
+                        <div id="formWarning">{{formWarning}}</div>
+                        <button type="button" class="btn btn-primary" id="submitBtn" @click="submit">Submit</button>
+                    </form>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Quick &amp; Easy</h5>
+                                <p class="card-text">Simply add your company's public information. we will handle all
+                                    the
+                                    internal media
+                                    for you</p>
+                            </div>
+                        </div>
+                        <div id="middleCard" class="card">
+                            <div class="card-body">
+                                <h5 class="card-title" id="validation">Validation</h5>
+                                <p class="card-text">We use a third party database to verify your company's existance.
+                                    As
+                                    long as you have released at least 1 game publicly on a platform like steam, we
+                                    will be
+                                    able to
+                                    find you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!--End #app-->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script src="../JS/formPage.js" type="module"></script>
+</body>
+
+</html>

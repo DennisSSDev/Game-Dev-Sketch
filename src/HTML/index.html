@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Game Dev Sketch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../CSS/index.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div id="content">
+        <ul>
+          <li>
+            <h2><a href="../HTML/index.html" id="title"> GD - Sketch </a></h2>
+          </li>
+          <!-- SEARCH BUTTON -->
+          <li class="endNav">
+            <button type="button" id="searchBtn" @click="searchObj.search(searchTerm)">
+              Search
+            </button>
+          </li>
+          <!-- END SEARCH BUTTON -->
+          <li class="endNav" id="searchBar">
+            <div class="search">
+              <input type="text" name="search" class="round" v-model="searchTerm" />
+            </div>
+          </li>
+          <li class="endNav">
+            <h5><a href="../HTML/browsePage.html"> Browse </a></h5>
+          </li>
+          <li class="endNav">
+            <h5><a href="../HTML/formPage.html"> Add Your Company </a></h5>
+          </li>
+        </ul>
+        <div id="main" class="row">
+          <div id="textButtons" class="col-md-8">
+            <h2>A Game Developer tool for finding AAA opportunities</h2>
+            <h5 id="miniDescription">
+              We provide services for developers to find the best companies
+              within the game industry and learn about them as you go
+            </h5>
+            <button @click="linkTo('./browsePage.html')" id="btn1">
+              <a href="../HTML/browsePage.html">Explore Game Teams</a>
+            </button>
+            <button @click="linkTo('./formPage.html')" id="btn2">
+              <a href="../HTML/formPage.html"> Add existing team </a>
+            </button>
+          </div>
+          <div id="Logo" class="col-md-4">
+            <img src="../Logo-1.png" alt="G" class="LogoIMG" />
+            <img src="../Logo-2.png" alt="Circles1" class="LogoIMG" id="circ1" />
+            <img src="../Logo-3.png" alt="Circles2" class="LogoIMG" id="circ2" />
+            <img src="../Logo-4.png" alt="Circles3" class="LogoIMG" id="circ3" />
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+  <script src="../JS/index.js" type="module"></script>
+</body>
+
+</html>

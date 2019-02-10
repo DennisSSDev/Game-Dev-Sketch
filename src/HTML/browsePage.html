@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Browse Companies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/browsePage.css" />
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div id="content">
+                <ul>
+                    <li>
+                        <h2><a href="../HTML/index.html" id="title">GD - Sketch</a></h2>
+                    </li>
+                    <li class="endNav">
+                        <button type="button" id="searchBtn" @click="searchObj.search(searchTerm)">Search</button>
+                    </li>
+                    <li class="endNav" id="searchBar">
+                        <div class="search">
+                            <input type="text" name="search" class="round" v-model="searchTerm" />
+                        </div>
+                    </li>
+                    <li class="endNav">
+                        <h5><a href="../HTML/browsePage.html"> Browse </a></h5>
+                    </li>
+                    <li class="endNav">
+                        <h5><a href="../HTML/formPage.html"> Add Your Company </a></h5>
+                    </li>
+                </ul>
+                <br>
+                <hr>
+                <br>
+                <h3 id="textT">Here is what we have for you</h3>
+            </div>
+        </header>
+        <div class="row justify-content-md-center" id="sortBlock">
+            <p id="sortText">
+                Sort By
+            </p>
+            <select @change="sort" class="form-control" v-model="sortSelection">
+                <option selected value="1">Relevance</option>
+                <option value="2">Alphabetical Order</option>
+                <option value="3">Most Recently Updated</option>
+            </select>
+        </div>
+        <div id="results" class="row justify-content-md-center">
+            <div @click="saveCompanyData" class="card" v-for="company in companiesToDisplay">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ company.cmpName }} </h5>
+                    <img v-if="companiesToDisplay !== []" v-bind:src="company.cmpLogo" alt="CompanyLogo" id="CmpLogo">
+                    <p class="card-text"><span>Last Time Updated: {{ company.date }} </span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultMessage">{{resultMessage}}</div>
+
+        <div id="buttons">
+            <button @click="lastPage" class="btn btn-primary" id="positBtn">Last</button>
+            <button @click="nextPage" class="btn btn-primary" id="positBtn">Next</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script src="../JS/browsePage.js" type="module"></script>
+</body>
+
+</html>

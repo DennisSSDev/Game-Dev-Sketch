@@ -1,0 +1,174 @@
+* {
+    color: white;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+header:not(#content) {
+    height: auto;
+    transform: scaleY(2) scaleX(2) rotate(-8deg);
+    background-image: linear-gradient(to top right, rgb(50, 111, 139), rgb(20, 125, 182), rgb(46, 156, 230));
+    color: white;
+}
+
+#content {
+    transform: rotate(8deg) scaleY(.5) scaleX(.5);
+    margin-top: 25px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+td div{
+    word-wrap: break-word;
+    max-width: 600px;
+    max-height: 120px;
+    overflow: auto;
+}
+
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#searchBar {
+    padding: 14px 25px;
+    padding-right: 40px;
+}
+
+#searchBtn {
+    margin-top: 10px;
+    margin-right: 1em;
+    background-color: white;
+    color: rgb(14, 113, 206);
+    font-size: 1.2em;
+    max-width: 6em;
+}
+
+#searchBtn:hover {
+    background-color: rgb(161, 203, 230);
+}
+
+.endNav {
+    float: right;
+}
+
+#title {
+    padding-top: 5px;
+    margin-bottom: 60px;
+    padding-left: 40px;
+    font: bold;
+}
+
+.round {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px rgb(14, 113, 206) solid;
+    padding: 5px 5px 5px 25px;
+    background-image: url("../Search.png");
+    background-color: rgb(14, 113, 206);
+    padding-left: 40px;
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    background-position: 8px 6px;
+}
+
+.search {
+    position: relative;
+    width: 190px;
+    height: 30px;
+}
+
+input {
+    color: white;
+}
+
+#main {
+    padding-left: 50px;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+h2 {
+    font: bold;
+}
+
+#miniDescription {
+    margin-top: 20px;
+    width: 90%;
+}
+
+button {
+    margin-top: 40px;
+    border: none;
+    border-radius: 7px;
+    height: 45px;
+    width: 200px;
+    font-size: 18px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button a {
+    padding: 0px;
+    text-decoration: none;
+}
+
+#btn1 {
+    background-color: rgb(68, 199, 68);
+}
+
+#btn1:hover {
+    background-color: rgb(34, 161, 34);
+}
+
+#btn1 a {
+    color: white;
+}
+
+#btn2 a {
+    color: rgb(10, 102, 163);
+}
+
+#btn2 {
+    margin-left: 30px;
+}
+
+#btn2:hover {
+    background-color: rgb(161, 203, 230);
+}
+
+img {
+    width: 270px;
+    height: 270px;
+    margin-bottom: 3em;
+}
+
+input {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 3px 22px 0 rgba(0, 0, 0, 0.1);
+}

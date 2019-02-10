@@ -1,0 +1,302 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+header li {
+    float: left;
+}
+
+a {
+    display: block;
+    color: rgb(97, 97, 97);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+header {
+    margin-top: 25px;
+}
+
+#searchBar {
+    padding: 14px 25px;
+    padding-right: 40px;
+}
+
+#searchBtn {
+    margin-top: 10px;
+    margin-right: 1em;
+    background-color: white;
+    color: rgb(14, 113, 206);
+    font-size: 1.2em;
+    width: 6em !important;
+}
+
+#searchBtn:hover {
+    background-color: rgb(161, 203, 230);
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    height: 45px;
+    width: 45px !important;
+    font-size: 18px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 600;
+}
+
+#positBtn {
+    min-width: 6em !important;
+}
+
+.endNav {
+    float: right;
+}
+
+#title {
+    padding-top: 5px;
+    padding-left: 40px;
+    font-weight: bold;
+}
+
+.round {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px rgb(14, 113, 206) solid;
+    padding: 5px 5px 5px 25px;
+    background-image: url("../Search.png");
+    background-color: rgb(14, 113, 206);
+    padding-left: 40px;
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    background-position: 8px 6px;
+}
+
+.search {
+    position: relative;
+    width: 190px;
+    height: 30px;
+}
+
+input {
+    color: white;
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgb(172, 63, 63) -moz-use-text-color rgb(143, 59, 59);
+    border-style: solid #686868;
+    border-width: 4px 0;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+header h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    color: rgb(14, 66, 134);
+
+}
+
+#results {
+    margin: auto;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card {
+    margin-left: 30px;
+    margin-right: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 3px 22px 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+    width: 22rem;
+    margin-top: 100px;
+}
+
+.card-text {
+    color: rgb(84, 100, 141);
+}
+
+.card p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row {
+    max-width: 90%;
+}
+
+.btn {
+    max-width: 100%;
+}
+
+.card-title {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#buttons {
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+#buttons button {
+    margin: 5px;
+
+}
+
+#jobListing {
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+#cmpTitle {
+    margin-left: 100px;
+    color: rgb(11, 22, 71);
+    font-weight: bold;
+}
+
+h6 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+span {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 30px;
+    border-style: none;
+    transition: .35s;
+}
+
+span:hover {
+    /*rgb(38, 175, 38);*/
+    border-radius: 30px;
+    border-style: solid;
+    border-color: rgb(38, 175, 38);
+    padding: 10px;
+    transition: .35s;
+}
+
+
+#miniNav {
+    margin-bottom: 15px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+#CmpLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 170px;
+    width: 170px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#map {
+    width: 500px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: 130px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 5px 10px 25px 5px rgba(0, 0, 0, 0.2);
+}
+
+#logoContainer {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+/* Mapbox CSS Overrides */
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl-group{
+    background-color: rgba(0,0,0,0);
+}
+
+.mapboxgl-ctrl-zoom-in{
+    background-color: white !important;
+    max-width: 30px !important;
+}
+
+.mapboxgl-ctrl-zoom-out{
+    background-color: white !important;
+    max-width: 30px !important;
+    margin-top: 0.5em;   
+}
+
+.mapboxgl-ctrl-compass{
+    background-color: white !important;
+    max-width: 30px !important;
+    margin-top: 0.5em;   
+}
+
+.mapboxgl-ctrl-geolocate{
+    max-width: 30px !important;
+    max-height: 30px !important;
+}
+
+.mapboxgl-ctrl-fullscreen, .mapboxgl-ctrl-shrink{
+    max-width: 30px !important;
+    max-height: 30px !important;
+}
+
+.mapboxgl-ctrl-styles{
+    background-color: rgba(0,0,0,0);
+}
+
+.mapboxgl-ctrl-styles button{
+    background-color: white;
+    max-height: 25px !important;
+    margin-top: 0.5em;   
+}
+/* End Mapbox Overrides */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

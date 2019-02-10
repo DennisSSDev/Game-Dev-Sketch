@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GD - Sketch Admin Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/admin.css" />
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div id="content">
+                <ul>
+                    <li>
+                        <h2><a href="../HTML/admin.html" id="title">{{title}}</a></h2>
+                    </li>
+                </ul>
+                <div id="main" class="row">
+                    <div id="Logo" class="col-md-12" align="center">
+                        <img src="../Logo.png" alt="Logo">
+                    </div>
+                    <div class="col-md-11">
+                        <submissions-list v-bind:data="submissions"></submissions-list>
+                    </div>
+
+                </div>
+                <!--End #main-->
+            </div>
+        </header>
+
+
+    </div>
+    <!--End #app-->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script src="../JS/admin-components.js"></script>
+    <script src="../JS/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "game-dev-sketch",
+  "version": "1.0.0",
+  "description": "A Web application for providing the best opportunities in the games industry",
+  "main": "./src/JS/companyPage.js",
+  "dependencies": {
+    "mapbox-gl": "^0.52.0-beta.1",
+    "mapbox-gl-controls": "0.0.13",
+    "mapbox-gl-vue": "^1.9.0",
+    "webpack": "^4.26.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "start": "npm run webpack",
+    "webpack": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisSSDev/Game-Dev-Sketch.git"
+  },
+  "author": "Dennis Slavinsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DennisSSDev/Game-Dev-Sketch/issues"
+  },
+  "homepage": "https://github.com/DennisSSDev/Game-Dev-Sketch#readme"
+}
